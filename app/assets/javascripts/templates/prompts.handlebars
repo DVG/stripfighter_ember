@@ -1,0 +1,9 @@
+<button {{action drawPrompts}} class="btn btn-large btn-block btn-primary">Draw Prompts</button>
+
+<div class="row">
+  {{#each prompts}}
+    <div class="span3">
+      <h1>{{content}}</h1>
+    </div>
+  {{/each}}
+</div>
