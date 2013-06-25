@@ -11,12 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-@import "flat-ui";
-
-#container {
-  text-align: center;
-  h1 {
-    font-size: 50px;
-  }
-}

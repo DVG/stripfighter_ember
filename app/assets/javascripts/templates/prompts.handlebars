@@ -1,9 +1,7 @@
-<button {{action drawPrompts}} class="btn btn-large btn-block btn-primary">Draw Prompts</button>
-
-<div class="row">
+<button {{action drawPrompts}} class="btn btn-large btn-inverse">Draw Prompts</button>
+{{#if prompts}}
+  <h1>Prompts:<h1>
   {{#each prompts}}
-    <div class="span3">
-      <h1>{{content}}</h1>
-    </div>
+    <h2>{{content}}</h2>
   {{/each}}
-</div>
+{{/if}}
