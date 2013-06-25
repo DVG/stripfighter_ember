@@ -1,7 +1,21 @@
-<button {{action drawPrompts}} class="btn btn-large btn-inverse">Draw Prompts</button>
+<div class="row">
+  <div class="span12">
+    <button {{action drawPrompts}} class="btn btn-inverse"><i class="icon-trash icon-white"></i> Draw Prompts</button>
+  </div>
+</div>
 {{#if prompts}}
-  <h1>Prompts:<h1>
-  {{#each prompts}}
-    <h2>{{content}}</h2>
-  {{/each}}
+  <div class="row">
+    <div class="span12">
+     <h1>Prompts:<h1>
+    </div>
+  </div>
+  <div class="row">
+    {{#each prompts}}
+    <div class="span6">
+      <div class="sf-prompt">
+        <h2>{{content}}</h2>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 {{/if}}
