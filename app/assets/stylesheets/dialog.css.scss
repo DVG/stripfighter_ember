@@ -1,0 +1,33 @@
+.triangle-right {
+  position: relative;
+  padding: 15px;
+  margin: 1em 0 3em;
+  color: #000;
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.trigangle-right.right {
+    margin-right: 40px;
+    background: #fff;
+}
+.triangle-right.right:after {
+      top: 16px;
+      right: -40px;
+      bottom: auto;
+      left: auto;
+      border-width: 15px 0 0 40px;
+      border-color: transparent #fff;
+}
+.triangle-right:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50px;
+    border-width: 20px 0 0 20px;
+    border-style: solid;
+    border-color: #fff transparent;
+    display: block;
+    width: 0;
+}

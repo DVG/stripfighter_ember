@@ -29,6 +29,25 @@
 // Example:
 // @linkColor: #ff0000;
 
+@bodyBackground:        @black;
+@textColor:             @white;
+@navbarBackgroundHighlight: #c5278f;
+@purple: darken(#c5278f, 25%);
+@navbarBackground: @purple;
+@navbarText:                      @white;
+@navbarLinkColor:                 @white;
+@navbarLinkColorHover:            @white;
+@navbarLinkColorActive:           darken(@white, 20%);
+@btnBackground: @purple;
+@btnBackgroundHighlight:            darken(@btnBackground, 10%);
+@btnBorder:                         #000000;
+@linkColor:             @white;
+@linkColorHover:        darken(@linkColor, 15%);
+
+.btn {
+  color: @white;
+}
+
 #container {
   text-align: center;
   h1 {
@@ -38,6 +57,7 @@
 
 
 .sf-prompt {
+  color: @black;
   text-transform: uppercase;
   font-family: Helvetica, Arial, sans-serif;
   position: relative;
@@ -50,23 +70,25 @@
   border-radius: 4px;
 }
 
-.sf-prompt:after {
-  content: "Prompt";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  padding: 3px 7px;
-  font-size: 12px;
-  font-weight: bold;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  color: #9da0a4;
-  -webkit-border-radius: 4px 0 4px 0;
-  -moz-border-radius: 4px 0 4px 0;
-  border-radius: 4px 0 4px 0;
-}
-
 
 .ready-set-art{
-  display: none;
+  h1 {
+    padding: 25px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 70px;
+    text-transform: uppercase;
+    display: none;
+    .js-art {
+      font-size: 100px;
+    }
+  }
 }
+
+#timer {
+  h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+}
+

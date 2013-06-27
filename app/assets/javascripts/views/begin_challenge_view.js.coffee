@@ -1,6 +1,9 @@
 StripfighterEmber.BeginChallengeView = Ember.View.extend
   templateName: "begin_challenge"
-  tagName: "form"
+  tagName: "button"
+  classNames: ['btn', 'btn-inverse']
+  template: Ember.Handlebars.compile('<i class="icon-pencil icon-white"></i> Begin Challenge!')
 
-  beginChallenge: ->
-    jQuery("#js-ready-set-art").show
+  click: ->
+    @get('controller').send('beginChallenge')
+    false
