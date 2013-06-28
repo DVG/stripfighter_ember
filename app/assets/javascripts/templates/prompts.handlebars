@@ -1,6 +1,6 @@
 <div class="row">
   <div class="span12">
-    <button {{action drawPrompts}} {{bindAttr disabled="promptsDrawn"}} class="btn"><i class="icon-trash icon-white"></i> Draw Prompts</button>
+    <button {{action drawPrompts}} {{bindAttr disabled="promptsDrawn"}} class="btn btn-inverse"><i class="icon-trash icon-white"></i> Draw Prompts</button>
   </div>
 </div>
 {{#if prompts}}
@@ -15,7 +15,7 @@
   </div>
   <div class="row">
     <div class="span12">
-      <button {{action beginChallenge}} {{bindAttr disabled="challengeAccepted"}} class="btn"><i class="icon-pencil icon-white"></i> Begin Challenge</button>
+      <button {{action beginChallenge}} {{bindAttr disabled="challengeAccepted"}} class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Begin Challenge</button>
     </div>
   </div>
   <div class="row">
@@ -30,7 +30,7 @@
   <div class="row">
     <div class="span4">
       {{#if heckle}}
-        <div class="triangle-right right">{{heckle}}</div>
+        <div class="triangle-right right dialog">{{heckle}}</div>
       {{/if}}
     </div>
     <div class="span4">
