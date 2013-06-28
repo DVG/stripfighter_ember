@@ -47,6 +47,14 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
       str = "0#{str}"
     str
 
+  hourLeftHeckle: ->
+    pool = ["ARTIST. Are you distraught that you have wasted 30 minutes and have produced almost nothing?"
+            "ARTIST. You have 15 minutes left. Plus 25 minutes. You have an hour."
+            "ARTIST. 80 minutes... is more than you have... by 20 minutes..."]
+    unless @.get('heckleValue')
+      val = @.set('heckleValue', pool[Math.floor(Math.random()*pool.length)])
+    val
+
   timerTimeRemaining: (->
     length = @.get('timerLength')
     seconds = length / 1000
@@ -59,8 +67,10 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
   heckle: (->
     length = @.get('timerLength')
     if length in [3590000..3600000]
-      "ARTIST, you have 45 minutes. Or you will in 15 minutes. You have an hour"
+      @.hourLeftHeckle()
+      @get('heckleValue')
     else
+      @.set('heckleValue', null)
       null
   ).property('timerLength')
 
