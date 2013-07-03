@@ -70,7 +70,9 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
 
   uploadComic: ->
     comic = StripfighterEmber.Comic.createRecord(title: @get('comicTitle'))
-    comic.get('store').commit()
+    transaction = comic.get('store').transaction()
+    transaction.add(comic)
+    transaction.commit()
     false
 
   timerTimeRemaining: (->
