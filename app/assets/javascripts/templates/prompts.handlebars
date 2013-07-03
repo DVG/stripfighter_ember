@@ -40,4 +40,14 @@
     </div>
     <div class="span4"></div>
   </div>
+
+  <button {{action completeChallenge}} class="btn btn-inverse">I'm done!</button>
+{{/if}}
+{{#if challengeCompleted}}
+<br />
+  <div class="row">
+    <div class="span12">
+      {{view StripfighterEmber.UploadComicView}}
+    </div>
+  </div>
 {{/if}}

@@ -1,9 +1,10 @@
 StripfighterEmber.PromptsController = Ember.ArrayController.extend
 
-  timerLength: 1802000 # 30 minutes # 3602000 # 60 minutes #5400000, # 90 minutes
+  timerLength: 5400000 #1802000 # 30 minutes # 3602000 # 60 minutes #5400000, # 90 minutes
   timer: false
   promptsDrawn: false
   challengeAccepted: false
+  challengeCompleted: false
   heckle: null
 
   drawPrompts: ->
@@ -62,6 +63,10 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
     unless @.get('heckleValue')
       val = @.set('heckleValue', pool[Math.floor(Math.random()*pool.length)])
     val
+
+  completeChallenge: ->
+    @set('timer', false)
+    @set('challengeCompleted', true)
 
   timerTimeRemaining: (->
     length = @.get('timerLength')
