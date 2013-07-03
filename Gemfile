@@ -27,17 +27,9 @@ gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 gem 'paperclip'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem 'devise'                   # server-side authentication
+gem 'bcrypt-ruby'              # password encryption
+gem 'inherited_resources'      # for easy RESTful API controller scaffolding
+gem 'active_model_serializers' # works out of the box with ember-data
+gem 'ember-auth-rails'         # client-side authentication
+gem 'emblem-rails'             # easier to write templates
