@@ -68,6 +68,11 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
     @set('timer', false)
     @set('challengeCompleted', true)
 
+  uploadComic: ->
+    comic = StripfighterEmber.Comic.createRecord(title: @get('comicTitle'))
+    comic.get('store').commit()
+    false
+
   timerTimeRemaining: (->
     length = @.get('timerLength')
     seconds = length / 1000

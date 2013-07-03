@@ -47,7 +47,15 @@
 <br />
   <div class="row">
     <div class="span12">
-      {{view StripfighterEmber.UploadComicView}}
+      <form>
+        <div class="control-group">
+          <label class="control-label" for="inputTitle">Title</label>
+          <div class="controls">
+            {{view Ember.TextField valueBinding="comicTitle" action="uploadComic"}}
+          </div>
+        </div>
+        <button {{action uploadComic}} class="btn btn-inverse">Upload Comic</button>
+      </form>
     </div>
   </div>
 {{/if}}
