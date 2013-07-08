@@ -5,6 +5,7 @@ StripfighterEmber::Application.routes.draw do
     namespace :v1 do
       resources :comics
       resources :prompts, :only => [:index]
+      resources :users, only: [:show]
     end
   end
   root to: 'application#index'
