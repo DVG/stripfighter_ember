@@ -16,7 +16,9 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require ember-auth
 //= require_self
+//= require auth
 //= require stripfighter_ember
 StripfighterEmber = Ember.Application.create();
 
