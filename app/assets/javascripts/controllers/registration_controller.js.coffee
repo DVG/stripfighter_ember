@@ -4,12 +4,12 @@ StripfighterEmber.RegistrationController = Ember.Controller.extend
   passwordConfirmation: null
 
   sendRegistration: () ->
-    self = this
-    $.post('/users', 
+    $.post('/api/v1/users', 
       user:
         email: @email,
         password: @password,
-        password_confirmation: @passwordConfirmation
-    ).then (response) ->
-      if (response.success)
-        alert('Login succeeded!')
+        password_confirmation: @passwordConfirmation)
+    .done (response) ->
+      # redirect to Elimination Challenge
+    .fail (response) ->
+      # display errors
