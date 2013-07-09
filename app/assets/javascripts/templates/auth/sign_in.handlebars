@@ -1,7 +1,6 @@
-<form>
-  <label>Email</label>
-  {{input type="text" value=view.email}}
-  {{input type="password" value=view.password}}
-  {{input type="checkbox" checked=view.remember}} <label>Remember Me</label>
-  <button>Sign In</button>
+<form class="form-inline">
+  {{input type="text" value=view.email placeholder="Email"}}
+  {{input type="password" value=view.password placeholder="Password"}}
+  <label>{{input type="checkbox" checked=view.remember}} Remember Me</label>
+  <button class="btn btn-inverse">Sign In</button>
 </form>
