@@ -1,6 +1,13 @@
 StripfighterEmber::Application.routes.draw do
-  resources :comics
-  resources :prompts
-  root to: 'application#index'
+  devise_for :users, controllers: {sessions: 'sessions'}
+
+  namespace :api do
+    namespace :v1 do
+      resources :comics, only: [:create]
+      resources :prompts, only: [:index]
+      resources :users
+    end
+  end
   
+  root to: 'application#index'
 end

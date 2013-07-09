@@ -1,8 +1,10 @@
+{{#unless promptsDrawn}}
 <div class="row">
   <div class="span12">
-    <button {{action drawPrompts}} {{bindAttr disabled="promptsDrawn"}} class="btn btn-inverse"><i class="icon-trash icon-white"></i> Draw Prompts</button>
+      <button {{action drawPrompts}} {{bindAttr disabled="promptsDrawn"}} class="btn btn-inverse"><i class="icon-trash icon-white"></i> Draw Prompts</button>
   </div>
 </div>
+{{/unless}}
 {{#if prompts}}
   <div class="row">
     {{#each prompts}}
@@ -13,11 +15,13 @@
     </div>
     {{/each}}
   </div>
+  {{#unless challengeAccepted}}
   <div class="row">
     <div class="span12">
       <button {{action beginChallenge}} {{bindAttr disabled="challengeAccepted"}} class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Begin Challenge</button>
     </div>
   </div>
+  {{/unless}}
   <div class="row">
     <div class="span12">
       <div id="js-ready-set-art" class="ready-set-art">

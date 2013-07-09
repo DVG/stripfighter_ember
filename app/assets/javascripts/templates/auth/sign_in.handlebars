@@ -1,0 +1,6 @@
+<form class="form-inline">
+  {{view Ember.TextField class="input-small" placeholder="Email" valueBinding="view.email"}}
+  {{view Ember.TextField type="password" class="input-small" placeholder="Password" valueBinding="view.password"}}
+  <input type="checkbox" {{bindAttr checked="view.remember"}}> <label>Remember Me</label>
+  <button type="submit" class="btn btn-inverse btn-small">Sign in</button>
+</form>
