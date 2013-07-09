@@ -1,0 +1,25 @@
+<form class="form-horizontal" {{action sendRegistration on="submit"}}>
+  <div class="control-group">
+    <label class="control-label" for="email">Email</label>
+    <div class="controls">
+      {{input type="text" id="email" placeholder="Email" value=email}}
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+      {{input type="password" id="password" placeholder="Password" value=password}}
+    </div>
+  </div>
+    <div class="control-group">
+    <label class="control-label" for="password_confirmation">Password Confirmation</label>
+    <div class="controls">
+      {{input type="password" id="password_confirmation" placeholder="Password Confirmation" value=passwordConfirmation}}
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-inverse">Sign Up</button>
+    </div>
+  </div>
+</form>

@@ -2,25 +2,12 @@
   <div class="navbar-inner">
     <a class="brand" href="#">Stripfighter</a>
     <ul class="nav">
-      <li><a href="/">Elimination Challenge</a></li>
+      <li>{{#linkTo prompts}}Elimination Challenge{{/linkTo}}</li>
+      <li>{{#linkTo registration}}Sign Up{{/linkTo}}</li>
+      <li>{{#linkTo login}}Login{{/linkTo}}</li>
     </ul>
   </div>
 </div>
 <div id="container" class="container">
-  <div class="row">
-    <div class="span12">
-      {{view StripfighterEmber.AuthView}}
-    </div>
-  </div>
-  <div class="row">
-    <div class="span12">
-      <h1>Elimination Challenge</h1>
-      <blockquote>
-        <p>You will approach the wastebasket of broken dreams. Inside are ideas which were, perhaps, before their time. You will draw out two ideas and in the next 90 minutes, create a comic strip based on the combination of these two themes</p>
-        <small>Tycho Brahe</small>
-      </blockquote>
-      
-    </div>
-  </div>
   {{outlet}}
 </div>
