@@ -2,9 +2,25 @@
   <div class="navbar-inner">
     <a class="brand" href="#">Stripfighter</a>
     <ul class="nav">
-      <li>{{#linkTo prompts}}Elimination Challenge{{/linkTo}}</li>
-      <li>{{#linkTo registration}}Sign Up{{/linkTo}}</li>
-      <li>{{#linkTo login}}Login{{/linkTo}}</li>
+      <li>{{#linkTo "prompts"}}Elimination Challenge{{/linkTo}}</li>
+
+    </ul>
+    <ul class="nav pull-right">
+      <li class="divider-vertical"></li>
+      <li class="dropdown">
+        {{#if StripfighterEmber.Auth.signedIn}}
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{StripfighterEmber.Auth.user.email}}<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" {{action signOut on="click"}}>Sign out</a></li> 
+          </ul>
+        {{else}}
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>{{#linkTo "registration"}}Sign Up{{/linkTo}}</li>
+            <li>{{#linkTo "login"}}Login{{/linkTo}}</li> 
+          </ul>
+        {{/if}}
+      </li>
     </ul>
   </div>
 </div>
