@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130706142001) do
+=======
+ActiveRecord::Schema.define(:version => 20130708174428) do
+>>>>>>> 1c38dc1c8f6c9b3fa616cb7812e6f10d737fe2c8
 
   create_table "comics", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -41,7 +45,10 @@ ActiveRecord::Schema.define(:version => 20130706142001) do
     t.string   "authentication_token"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+<<<<<<< HEAD
     t.string   "gravatar_url"
+=======
+>>>>>>> 1c38dc1c8f6c9b3fa616cb7812e6f10d737fe2c8
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

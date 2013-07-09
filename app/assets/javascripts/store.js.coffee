@@ -1,4 +1,4 @@
 StripfighterEmber.Store = DS.Store.extend
   adapter: DS.RESTAdapter.create
-    namespace: 'api/v1'
+    url: '/api/v1'
 
