@@ -4,12 +4,18 @@ StripfighterEmber.RegistrationController = Ember.Controller.extend
   passwordConfirmation: null
 
   sendRegistration: () ->
-    $.post('/api/v1/users', 
+    self = @
+    $.post('/users', 
       user:
         email: @email,
         password: @password,
         password_confirmation: @passwordConfirmation)
     .done (response) ->
-      # redirect to Elimination Challenge
+      StripfighterEmber.Auth.signIn(
+        data:
+          email: self.email
+          password: self.password
+          remember: true
+      )
     .fail (response) ->
       # display errors

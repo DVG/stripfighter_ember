@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
-  include Gravtastic
-  gravtastic
+  before_save :ensure_authentication_token
 
   validates :email, presence: true
 end
