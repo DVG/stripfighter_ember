@@ -8,6 +8,5 @@ StripfighterEmber.PromptsRoute = Ember.Route.extend
   model: -> StripfighterEmber.Prompt.find()
 
 StripfighterEmber.ApplicationRoute = Ember.Route.extend()
-StripfighterEmber.RegistrationRoute = Ember.Route.extend()
 StripfighterEmber.LoginRoute = Ember.Route.extend()
 StripfighterEmber.LogoutRoute = Ember.Route.extend()

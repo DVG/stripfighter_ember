@@ -11,11 +11,6 @@ StripfighterEmber.RegistrationController = Ember.Controller.extend
         password: @password,
         password_confirmation: @passwordConfirmation)
     .done (response) ->
-      StripfighterEmber.Auth.signIn(
-        data:
-          email: self.email
-          password: self.password
-          remember: true
-      )
+      StripfighterEmber.Auth.createSession(response)
     .fail (response) ->
       # display errors
