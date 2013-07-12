@@ -1,25 +1,37 @@
-<form class="form-horizontal" {{action sendRegistration on="submit"}}>
-  <div class="control-group">
-    <label class="control-label" for="email">Email</label>
-    <div class="controls">
-      {{input type="text" id="email" placeholder="Email" value=email}}
+<div class="row">
+  <div class="span2"></div>
+  <div class="span8">
+    <div class="page-header">
+      <h1>Sign Up</h1>
     </div>
+    <form class="form-horizontal" {{action sendRegistration on="submit"}}>
+      <div {{bindAttr class=":control-group hasEmailErrors:error"}}>
+        <label class="control-label" for="email">Email</label>
+        <div class="controls">
+          {{input type="text" id="email" placeholder="Email" value=email}}
+          <span class="help-inline">{{emailErrorOutput}}</span>
+        </div>
+      </div>
+      <div {{bindAttr class=":control-group hasPasswordErrors:error"}}>
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+          {{input type="password" id="password" placeholder="Password" value=password}}
+          <span class="help-inline">{{passwordErrors}}</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="password_confirmation">Password Confirmation</label>
+        <div class="controls">
+          {{input type="password" id="password_confirmation" placeholder="Password Confirmation" value=passwordConfirmation}}
+          <span class="help-inline">{{passwordConfirmationErrors}}</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn btn-inverse">Sign Up</button>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="control-group">
-    <label class="control-label" for="password">Password</label>
-    <div class="controls">
-      {{input type="password" id="password" placeholder="Password" value=password}}
-    </div>
-  </div>
-    <div class="control-group">
-    <label class="control-label" for="password_confirmation">Password Confirmation</label>
-    <div class="controls">
-      {{input type="password" id="password_confirmation" placeholder="Password Confirmation" value=passwordConfirmation}}
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <button type="submit" class="btn btn-inverse">Sign Up</button>
-    </div>
-  </div>
-</form>
+  <div class="span2"></div>
+</div>

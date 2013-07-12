@@ -1,75 +1,77 @@
-<div class="row">
-  <div class="span12">
-    <h1>Elimination Challenge</h1>
-    <blockquote>
-      <p>You will approach the wastebasket of broken dreams. Inside are ideas which were, perhaps, before their time. You will draw out two ideas and in the next 90 minutes, create a comic strip based on the combination of these two themes</p>
-      <small>Tycho Brahe</small>
-    </blockquote>
-    
-  </div>
-</div>
-{{#unless promptsDrawn}}
-<div class="row">
-  <div class="span12">
-      <button {{action drawPrompts}} {{bindAttr disabled="promptsDrawn"}} class="btn btn-inverse"><i class="icon-trash icon-white"></i> Draw Prompts</button>
-  </div>
-</div>
-{{/unless}}
-{{#if prompts}}
-  <div class="row">
-    {{#each prompts}}
-    <div class="span6">
-      <div class="sf-prompt">
-        <h2>{{content}}</h2>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{#unless challengeAccepted}}
+<div id="challenge">
   <div class="row">
     <div class="span12">
-      <button {{action beginChallenge}} {{bindAttr disabled="challengeAccepted"}} class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Begin Challenge</button>
+      <h1>Elimination Challenge</h1>
+      <blockquote>
+        <p>You will approach the wastebasket of broken dreams. Inside are ideas which were, perhaps, before their time. You will draw out two ideas and in the next 90 minutes, create a comic strip based on the combination of these two themes</p>
+        <small>Tycho Brahe</small>
+      </blockquote>
+      
+    </div>
+  </div>
+  {{#unless promptsDrawn}}
+  <div class="row">
+    <div class="span12">
+        <button {{action drawPrompts}} {{bindAttr disabled="promptsDrawn"}} class="btn btn-inverse"><i class="icon-trash icon-white"></i> Draw Prompts</button>
     </div>
   </div>
   {{/unless}}
-  <div class="row">
-    <div class="span12">
-      <div id="js-ready-set-art" class="ready-set-art">
-        <h1 class="js-ready ready">Ready.</h1><h1 class="js-set set">Set.</h1><h1 class="js-art art">ART.</h1>
-      </div>
-    </div>
-  </div>
-{{/if}}
-{{#if timer}}
-  <div class="row">
-    <div class="span4">
-      {{#if heckle}}
-        <div class="triangle-right right dialog">{{heckle}}</div>
-      {{/if}}
-    </div>
-    <div class="span4">
-      <div id="timer">
-        <h1>{{timerTimeRemaining}}</h1>
-      </div>
-    </div>
-    <div class="span4"></div>
-  </div>
-
-  <button {{action completeChallenge}} class="btn btn-inverse">I'm done!</button>
-{{/if}}
-{{#if challengeCompleted}}
-<br />
-  <div class="row">
-    <div class="span12">
-      <form>
-        <div class="control-group">
-          <label class="control-label" for="inputTitle">Title</label>
-          <div class="controls">
-            {{view Ember.TextField valueBinding="comicTitle" action="uploadComic"}}
-          </div>
+  {{#if prompts}}
+    <div class="row">
+      {{#each prompts}}
+      <div class="span6">
+        <div class="sf-prompt">
+          <h2>{{content}}</h2>
         </div>
-        <button {{action uploadComic}} class="btn btn-inverse">Upload Comic</button>
-      </form>
+      </div>
+      {{/each}}
     </div>
-  </div>
-{{/if}}
+    {{#unless challengeAccepted}}
+    <div class="row">
+      <div class="span12">
+        <button {{action beginChallenge}} {{bindAttr disabled="challengeAccepted"}} class="btn btn-inverse"><i class="icon-pencil icon-white"></i> Begin Challenge</button>
+      </div>
+    </div>
+    {{/unless}}
+    <div class="row">
+      <div class="span12">
+        <div id="js-ready-set-art" class="ready-set-art">
+          <h1 class="js-ready ready">Ready.</h1><h1 class="js-set set">Set.</h1><h1 class="js-art art">ART.</h1>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+  {{#if timer}}
+    <div class="row">
+      <div class="span4">
+        {{#if heckle}}
+          <div class="triangle-right right dialog">{{heckle}}</div>
+        {{/if}}
+      </div>
+      <div class="span4">
+        <div id="timer">
+          <h1>{{timerTimeRemaining}}</h1>
+        </div>
+      </div>
+      <div class="span4"></div>
+    </div>
+
+    <button {{action completeChallenge}} class="btn btn-inverse">I'm done!</button>
+  {{/if}}
+  {{#if challengeCompleted}}
+  <br />
+    <div class="row">
+      <div class="span12">
+        <form>
+          <div class="control-group">
+            <label class="control-label" for="inputTitle">Title</label>
+            <div class="controls">
+              {{view Ember.TextField valueBinding="comicTitle" action="uploadComic"}}
+            </div>
+          </div>
+          <button {{action uploadComic}} class="btn btn-inverse">Upload Comic</button>
+        </form>
+      </div>
+    </div>
+  {{/if}}
+</div>

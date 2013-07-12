@@ -1,1 +1,1 @@
-StripfighterEmber.LoginController = Ember.Controller.extend()
+StripfighterEmber.LoginController = Ember.Controller.extend

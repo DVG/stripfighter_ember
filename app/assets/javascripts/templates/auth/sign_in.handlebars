@@ -1,9 +1,26 @@
-<div class="login-form">
-  <h1>Log In</h1>
-  <form class="form-inline">
-    {{input type="text" value=view.email placeholder="Email"}}
-    {{input type="password" value=view.password placeholder="Password"}}
-    <label>{{input type="checkbox" checked=view.remember}} Remember Me</label>
-    <button class="btn btn-inverse">Sign In</button>
+  <div class="page-header">
+    <h1>Log In</h1>
+  </div>
+  {{#if view.loginError}}
+    <div class="alert alert-error">{{view.loginError}}</div
+  {{/if}}
+  <form class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label">Email</label>
+      <div class="controls">
+        {{input type="text" value=view.email placeholder="Email"}}
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Password</label>
+      <div class="controls">
+        {{input type="password" value=view.password placeholder="Password"}}
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <label>{{input type="checkbox" checked=view.remember}} Remember Me</label>
+        <button class="btn btn-inverse">Sign In</button>
+      </div>
+    </div>
   </form>
-</div>
