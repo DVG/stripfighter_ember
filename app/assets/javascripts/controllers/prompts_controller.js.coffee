@@ -69,13 +69,23 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
     @set('challengeCompleted', true)
 
   uploadComic: ->
-    arr = []
-    arr.push(@get('prompts')[0])
-    arr.push(@get('prompts')[1])
-    comic = StripfighterEmber.Comic.createRecord(title: @get('comicTitle'), prompt_one: arr[0], prompt_two: arr[1])
+    self = @
+    comic = StripfighterEmber.Comic.createRecord
+      title: self.get('comicTitle')
+      prompt_one: self.get('prompts')[0]
+      prompt_two: self.get('prompts')[1]
     transaction = comic.get('store').transaction()
     transaction.add(comic)
     transaction.commit()
+    # $('#fileupload').fileupload(
+    #   'send'
+    #   url: "/api/v1/comics"
+    #   formData:
+    #     comic:
+    #       title: self.get('comicTitle')
+    #       prompt_one: self.get('prompts')[0]
+    #       prompt_two: self.get('prompts')[1]
+    # )
     false
 
   timerTimeRemaining: (->
