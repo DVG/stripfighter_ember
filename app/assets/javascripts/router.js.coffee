@@ -1,11 +1,6 @@
 StripfighterEmber.Router.map ->
-  @route "prompts", path: '/',
+  @route "home", path: '/',
+  @route "prompts", path: "/challenge",
   @route "registration", path: '/sign_up',
   @route "login", path: '/login'
   @route "logout", path: '/logout'
-
-StripfighterEmber.PromptsRoute = StripfighterEmber.AuthenticatedRoute.extend
-  model: -> StripfighterEmber.Prompt.find()
-
-StripfighterEmber.ApplicationRoute = Ember.Route.extend()
-StripfighterEmber.LogoutRoute = Ember.Route.extend()

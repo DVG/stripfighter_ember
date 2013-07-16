@@ -1,0 +1,1 @@
+StripfighterEmber.LogoutRoute = Ember.Route.extend()

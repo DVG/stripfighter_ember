@@ -1,0 +1,1 @@
+StripfighterEmber.ApplicationRoute = Ember.Route.extend()

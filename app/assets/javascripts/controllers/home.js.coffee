@@ -1,0 +1,1 @@
+StripfighterEmber.HomeController = Ember.Controller.extend()
