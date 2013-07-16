@@ -1,7 +1,32 @@
 <div class="row">
   <div class="span2"></div>
   <div class="span8">
-    {{view StripfighterEmber.AuthView}}
+      <div class="page-header">
+    <h1>Log In</h1>
+  </div>
+  {{#if loginError}}
+    <div class="alert alert-error">{{loginError}}</div>
+  {{/if}}
+  <form class="form-horizontal" {{action login on="submit"}}>
+    <div class="control-group">
+      <label class="control-label">Email</label>
+      <div class="controls">
+        {{input type="text" value=email placeholder="Email"}}
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Password</label>
+      <div class="controls">
+        {{input type="password" value=password placeholder="Password"}}
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <label>{{input type="checkbox" checked=remember}} Remember Me</label>
+        <button class="btn btn-inverse">Sign In</button>
+      </div>
+    </div>
+  </form>
   </div>
   <div class="span2"></div>
 </div>

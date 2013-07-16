@@ -4,9 +4,8 @@ StripfighterEmber.Router.map ->
   @route "login", path: '/login'
   @route "logout", path: '/logout'
 
-StripfighterEmber.PromptsRoute = Ember.Route.extend
+StripfighterEmber.PromptsRoute = StripfighterEmber.AuthenticatedRoute.extend
   model: -> StripfighterEmber.Prompt.find()
 
 StripfighterEmber.ApplicationRoute = Ember.Route.extend()
-StripfighterEmber.LoginRoute = Ember.Route.extend()
 StripfighterEmber.LogoutRoute = Ember.Route.extend()
