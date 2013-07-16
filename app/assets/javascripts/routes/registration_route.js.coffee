@@ -1,4 +1,4 @@
-StripfighterEmber.RegistrationRoute = Ember.Route.extend
+StripfighterEmber.RegistrationRoute = StripfighterEmber.NotAuthenticatedRoute.extend
   setupController: (controller) ->
     controller.set('email', null)
     controller.set('password', null)

@@ -1,1 +1,1 @@
-StripfighterEmber.LoginRoute = Ember.Route.extend()
+StripfighterEmber.LoginRoute = StripfighterEmber.NotAuthenticatedRoute.extend
