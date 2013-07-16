@@ -6,6 +6,7 @@ StripfighterEmber.AuthenticatedRoute = Ember.Route.extend
   events: {
     error: (reason, transition) ->
       loginController = @controllerFor('login')
+      loginController.set('loginError', "ARTIST. You must be logged in to perform that action.")
       loginController.set('afterLoginTransition', transition)
       @transitionTo('login')
   }

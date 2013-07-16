@@ -1,1 +1,1 @@
-StripfighterEmber.LoginRoute = StripfighterEmber.NotAuthenticatedRoute.extend
+StripfighterEmber.LoginRoute = StripfighterEmber.NotAuthenticatedRoute.extend()
