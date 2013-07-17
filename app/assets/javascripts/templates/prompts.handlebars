@@ -67,7 +67,7 @@
             <label class="control-label" for="inputTitle">Title</label>
             <div class="controls">
               {{input type="text" valueBinding="comicTitle"}}
-              {{input type="file" id="fileupload" valueBinding="comicFile"}}
+              {{view StripfighterEmber.UploadFileView name="file" contentBinding="content"}}
             </div>
           </div>
           <button {{action uploadComic}} id="upload_comic" class="btn btn-inverse">Upload Comic</button>
