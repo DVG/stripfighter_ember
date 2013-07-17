@@ -6,6 +6,7 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
   challengeAccepted: false
   challengeCompleted: false
   heckle: null
+  file: null
 
   drawPrompts: ->
     @setEach('selected', false)
@@ -70,22 +71,22 @@ StripfighterEmber.PromptsController = Ember.ArrayController.extend
 
   uploadComic: ->
     self = @
+    reader = new FileReader()
+    e = $("#fileupload")
+    reader.onload = (e) ->
+      self.set('file', e.target.result)
+    reader.readAsText(e.target.files[0])
+    arr = []
+    arr.push(@get('prompts')[0])
+    arr.push(@get('prompts')[1])
     comic = StripfighterEmber.Comic.createRecord
-      title: self.get('comicTitle')
-      prompt_one: self.get('prompts')[0]
-      prompt_two: self.get('prompts')[1]
+      title: @get('comicTitle')
+      prompt_one: arr[0]
+      prompt_two: arr[1]
+      attachment: self.get('file')
     transaction = comic.get('store').transaction()
     transaction.add(comic)
     transaction.commit()
-    # $('#fileupload').fileupload(
-    #   'send'
-    #   url: "/api/v1/comics"
-    #   formData:
-    #     comic:
-    #       title: self.get('comicTitle')
-    #       prompt_one: self.get('prompts')[0]
-    #       prompt_two: self.get('prompts')[1]
-    # )
     false
 
   timerTimeRemaining: (->

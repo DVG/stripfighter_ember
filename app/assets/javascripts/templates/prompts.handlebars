@@ -62,15 +62,18 @@
   <br />
     <div class="row">
       <div class="span12">
-        <form id="fileupload" enctype="multipart/form-data">
+        <form enctype="multipart/form-data">
           <div class="control-group">
             <label class="control-label" for="inputTitle">Title</label>
             <div class="controls">
               {{input type="text" valueBinding="comicTitle"}}
-              {{input type="file" valueBinding="comicFile"}}
+              {{input type="file" id="fileupload" valueBinding="comicFile"}}
             </div>
           </div>
-          <button {{action uploadComic}} class="btn btn-inverse">Upload Comic</button>
+          <button {{action uploadComic}} id="upload_comic" class="btn btn-inverse">Upload Comic</button>
+          <div id="progress">
+            <div class="bar" style="width: 0%;"></div>
+          </div>
         </form>
       </div>
     </div>
