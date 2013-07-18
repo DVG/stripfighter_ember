@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708174428) do
+ActiveRecord::Schema.define(:version => 20130718113427) do
 
   create_table "comics", :force => true do |t|
     t.datetime "created_at",    :null => false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130708174428) do
     t.string   "title"
     t.integer  "prompt_one_id"
     t.integer  "prompt_two_id"
+    t.integer  "user_id"
   end
 
   create_table "prompts", :force => true do |t|

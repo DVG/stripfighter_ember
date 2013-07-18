@@ -2,7 +2,7 @@ module Api
   module V1
     class ComicsController < BaseController
       def create
-        comic = Comic.new(prompt_one_id: params[:prompt_one_id], prompt_two_id: params[:prompt_two_id])
+        comic = Comic.new(prompt_one_id: params[:prompt_one_id], prompt_two_id: params[:prompt_two_id], user: current_user)
         if comic.save
           data = {
             id: comic.id
