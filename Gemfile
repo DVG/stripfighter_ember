@@ -33,3 +33,5 @@ gem 'inherited_resources'      # for easy RESTful API controller scaffolding
 gem 'active_model_serializers' # works out of the box with ember-data
 gem 'gravtastic'
 gem 'jquery-fileupload-rails'
+gem 'carrierwave'
+gem 'rmagick'
