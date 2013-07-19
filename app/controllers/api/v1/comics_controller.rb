@@ -2,6 +2,7 @@ module Api
   module V1
     class ComicsController < BaseController
 
+      before_filter :auth_only!
       before_filter :wrap_params, :only => [:create]
 
       def create

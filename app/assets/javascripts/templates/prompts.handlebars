@@ -2,11 +2,12 @@
   <div class="row">
     <div class="span12">
       <h1>Elimination Challenge</h1>
-      <blockquote>
-        <p>You will approach the wastebasket of broken dreams. Inside are ideas which were, perhaps, before their time. You will draw out two ideas and in the next 90 minutes, create a comic strip based on the combination of these two themes</p>
-        <small>Tycho Brahe</small>
-      </blockquote>
-      
+      {{#unless promptsDrawn}}
+        <blockquote>
+          <p>You will approach the wastebasket of broken dreams. Inside are ideas which were, perhaps, before their time. You will draw out two ideas and in the next 90 minutes, create a comic strip based on the combination of these two themes</p>
+          <small>Tycho Brahe</small>
+        </blockquote>
+      {{/unless}}
     </div>
   </div>
   {{#unless promptsDrawn}}
@@ -56,7 +57,11 @@
       <div class="span4"></div>
     </div>
 
-    <button {{action completeChallenge}} class="btn btn-inverse">I'm done!</button>
+    <div class="row">
+      <div class="span12">
+        <button {{action completeChallenge}} class="btn btn-inverse">I'm done!</button>
+      </div>
+    </div>
   {{/if}}
   {{#if challengeCompleted}}
   <br />
