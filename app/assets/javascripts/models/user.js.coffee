@@ -1,2 +1,8 @@
-StripfighterEmber.User = DS.Model.extend
-  email: DS.attr('string')
+StripfighterEmber.User = Ember.Model.extend
+  id: Ember.attr()
+  email: Ember.attr()
+
+StripfighterEmber.User.adapter = Ember.RESTAdapter.create()
+StripfighterEmber.User.url = "/api/v1/users"
+StripfighterEmber.User.collectionKey = "users"
+StripfighterEmber.User.rootKey = "user"
