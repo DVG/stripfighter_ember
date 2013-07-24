@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="span12">
+    <h1>Comics</h1>
+    {{#each controller}}
+      <img {{bindAttr src="image_url"}} />
+      <p>{{prompt_one.content}}{{prompt_two.content}}</p>
+    {{/each}}
+  </div>
+</div>

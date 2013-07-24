@@ -3,7 +3,7 @@ StripfighterEmber::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :comics, only: [:create]
+      resources :comics, only: [:create, :index]
       resources :prompts, only: [:index]
       resources :users
     end

@@ -1,3 +1,3 @@
 class ComicSerializer < ActiveModel::Serializer
-  attributes :id, :title, :prompt_one, :prompt_two
+  attributes :id, :title, :prompt_one, :prompt_two, :image_url
 end
