@@ -5,7 +5,6 @@
 //= require handlebars
 //= require ember
 //= require lib/ember-model
-//= require ember-data
 //= require ember-auth
 //= require_self
 //= require auth
