@@ -1,9 +1,29 @@
 <div class="row">
-  <div class="span12">
+  <div class="span12 page-header">    
     <h1>Comics</h1>
-    {{#each controller}}
-      <img {{bindAttr src="image_url"}} />
-      <p>{{prompt_one.content}}{{prompt_two.content}}</p>
-    {{/each}}
   </div>
 </div>
+{{#each controller}}
+<div class="row">
+  <div class="span6">
+    <div class="index-prompt">
+      <h2>{{prompt_one.content}}</h2>
+    </div>
+  </div>
+  <div class="span6">
+    <div  class="index-prompt"><h2>{{prompt_two.content}}</h2></div>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    <img {{bindAttr src="image_url"}} class="comic"/>
+  </div>
+</div>
+<div class="row">
+  <div class="span12">
+    Upvote
+    Downvote
+  </div>
+</div>
+<hr />
+{{/each}}
