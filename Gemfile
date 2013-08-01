@@ -20,6 +20,7 @@ group :development, :test do
   gem 'growl'
 end
 gem 'debugger'
+gem 'activerecord-reputation-system'
 gem 'ember-rails'
 gem 'ember-auth-rails'         # client-side authentication
 gem "therubyracer"
