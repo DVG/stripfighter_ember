@@ -11,6 +11,11 @@ describe Comic do
     before { subject.downvote(user) }
     it { subject.score.should == -1 }
   end
+  context "downvotes cancels upvote" do
+    subject { create(:comic_with_votes, upvotes: 1) }
+    before { subject.downvote(user) }
+    it { subject.score.should == 0 }
+  end
 end
 
 describe User do
@@ -21,10 +26,9 @@ describe User do
     it { subject.karma.should == 10 }
   end
   context "-10 Karma per comic downvote" do
-    let(:other_user) { create(:user) }
+    let(:comic) { create(:comic_with_votes, upvotes: 1) }
     before do
-      comic.upvote(subject)
-      comic.downvote(other_user)
+      comic.downvote(subject)
     end
     it { subject.karma.should == 0 }
   end
