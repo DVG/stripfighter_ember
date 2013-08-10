@@ -1,1 +1,3 @@
-StripfighterEmber.ComicsController = Ember.ArrayController.extend()
+StripfighterEmber.ComicsController = Ember.ArrayController.extend(
+  itemController: 'comic'
+)

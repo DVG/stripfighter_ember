@@ -4,6 +4,7 @@ StripfighterEmber.Comic = Ember.Model.extend
   image_url: Ember.attr()
   prompt_one: Ember.belongsTo('StripfighterEmber.Prompt', {key: 'prompt_one', embedded: true})
   prompt_two: Ember.belongsTo('StripfighterEmber.Prompt', {key: 'prompt_two', embedded: true})
+  score: Ember.attr()
 
 StripfighterEmber.Comic.adapter = Ember.RESTAdapter.create()
 StripfighterEmber.Comic.url = "/api/v1/comics"

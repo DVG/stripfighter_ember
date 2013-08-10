@@ -16,6 +16,28 @@ module Api
         end
       end
 
+      def upvote
+        if !current_user
+          render json: [], status: 422
+        else
+          comic = Comic.find(params[:id])
+          comic.upvote(current_user)
+          comic.save!
+          render json: comic, status: 201
+        end
+      end
+
+      def downvote
+        if !current_user
+          render json: [], status: 422
+        else
+          comic = Comic.find(params[:id])
+          comic.downvote(current_user)
+          comic.save!
+          render json: comic, status: 201
+        end
+      end
+
       private
 
       def wrap_params

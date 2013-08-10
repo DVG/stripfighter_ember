@@ -3,7 +3,12 @@ StripfighterEmber::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :comics, only: [:create, :index]
+      resources :comics, only: [:create, :index] do
+        member do
+          post :upvote
+          post :downvote
+        end
+      end
       resources :prompts, only: [:index]
       resources :users
     end

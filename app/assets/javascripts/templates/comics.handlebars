@@ -3,26 +3,27 @@
     <h1>Comics</h1>
   </div>
 </div>
-{{#each controller}}
+{{#each comic in controller}}
 <div class="row">
   <div class="span6">
     <div class="index-prompt">
-      <h2>{{prompt_one.content}}</h2>
+      <h2>{{comic.prompt_one.content}}</h2>
     </div>
   </div>
   <div class="span6">
-    <div  class="index-prompt"><h2>{{prompt_two.content}}</h2></div>
+    <div  class="index-prompt"><h2>{{comic.prompt_two.content}}</h2></div>
   </div>
 </div>
 <div class="row">
   <div class="span12">
-    <img {{bindAttr src="image_url"}} class="comic"/>
+    <img {{bindAttr src="comic.image_url"}} class="comic"/>
   </div>
 </div>
 <div class="row">
   <div class="span12">
-    Upvote
-    Downvote
+    <button {{action upvote}} class="btn btn-inverse"><i class="icon-arrow-up"></i></button>
+    <span class="score">{{comic.score}}</span>
+    <button {{action downvote}} class="btn btn-inverse"><i class="icon-arrow-down"> </i></button>
   </div>
 </div>
 <hr />
