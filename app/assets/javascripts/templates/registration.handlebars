@@ -12,6 +12,13 @@
           <span class="help-inline">{{emailErrorOutput}}</span>
         </div>
       </div>
+      <div {{bindAttr class=":control-group hasUsernameErrors:error"}}>
+        <label class="control-label" for="username">Username</label>
+        <div class="controls">
+          {{input type="text" id="username" placeholder="Username" value=username}}
+          <span class="help-inline">{{usernameErrorOutput}}</span>
+        </div>
+      </div>
       <div {{bindAttr class=":control-group hasPasswordErrors:error"}}>
         <label class="control-label" for="password">Password</label>
         <div class="controls">

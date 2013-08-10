@@ -1,12 +1,16 @@
-
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  include Gravtastic
+  gravtastic size: 40, secure: false
+
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
 
   before_save :ensure_authentication_token
+
+  validates :username, presence: true
 
   has_many :comics
 

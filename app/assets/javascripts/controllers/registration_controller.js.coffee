@@ -4,8 +4,10 @@ StripfighterEmber.RegistrationController = Ember.Controller.extend
   passwordConfirmation: null
   emailErrors: []
   passwordErrors: []
+  usernameErrors: []
 
   hasEmailErrors: Ember.computed.notEmpty('emailErrors')
+  hasUsernameErrors: Ember.computed.notEmpty('usernameErrors')
   hasPasswordErrors: Ember.computed.notEmpty('passwordErrors')
 
   emailErrorOutput: (->
@@ -13,6 +15,12 @@ StripfighterEmber.RegistrationController = Ember.Controller.extend
     for error in @emailErrors
       output = "#{output} #{error}"
   ).property('emailErrors')
+
+  usernameErrorOutput: (->
+    output = "Username "
+    for error in @usernameErrors
+      output = "#{output} #{error}"
+  ).property('usernameErrors')
 
   passwordErrorOutput: (->
     output = "Password "
@@ -37,3 +45,5 @@ StripfighterEmber.RegistrationController = Ember.Controller.extend
         self.set('emailErrors', errors.email)
       if errors.password
         self.set('passwordErrors', errors.password)
+      if errors.username
+        self.set('usernameErrors', errors.username)

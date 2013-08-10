@@ -19,6 +19,7 @@ group :development, :test do
   gem 'rb-fsevent', require: false  # OSX file notification
   gem 'growl'
 end
+gem 'gravtastic'
 gem 'debugger'
 gem 'activerecord-reputation-system'
 gem 'ember-rails'
