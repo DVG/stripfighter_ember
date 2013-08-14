@@ -32,4 +32,8 @@ describe User do
     end
     it { subject.karma.should == 0 }
   end
+  context "20 karma for 2 upvotes" do
+    let!(:comic) { create(:comic_with_votes, upvotes: 2, user: subject) }
+    it { subject.karma.should == 20 }
+  end
 end

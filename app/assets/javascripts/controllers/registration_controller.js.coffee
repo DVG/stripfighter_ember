@@ -35,6 +35,7 @@ StripfighterEmber.RegistrationController = Ember.Controller.extend
     $.post('/users', 
       user:
         email: @email,
+        username: @username,
         password: @password,
         password_confirmation: @passwordConfirmation)
     .done (response) ->

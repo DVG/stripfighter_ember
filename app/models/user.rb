@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
   has_many :comics
 
   has_reputation :karma,
-    :source => [
-    :reputation => :votes, :of => :comics, :weight => 10]
+    :source => [:reputation => :votes, :of => :comics, :weight => 10],
+    :aggregated_by => :sum
 
   def karma
     self.reputation_for(:karma).to_i

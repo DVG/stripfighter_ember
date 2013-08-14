@@ -6,7 +6,8 @@ class Comic < ActiveRecord::Base
   belongs_to :user
   mount_uploader :image, ComicUploader
 
-  has_reputation :votes, :source => :user, :aggregated_by => :sum
+  has_reputation :votes, :source => :user, :aggregated_by => :sum,
+    :source_of => {:reputation => :karma, :of => :user}
 
   def upvote(user)
     self.add_or_update_evaluation(:votes, 1, user)

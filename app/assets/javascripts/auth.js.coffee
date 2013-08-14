@@ -7,7 +7,7 @@ StripfighterEmber.Auth = Ember.Auth.create
 
   userModel: 'StripfighterEmber.User'
 
-  modules: ['emberModel', 'rememberable', 'actionRedirectable']
+  modules: ['emberModel', 'actionRedirectable', 'authRedirectable', 'rememberable']
 
   actionRedirectable:
     signInRoute: 'prompts'
